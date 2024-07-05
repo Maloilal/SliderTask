@@ -38,7 +38,7 @@ const App: React.FC = () => {
         "Телескоп 'Хаббл' обнаружи самую удаленную из всех обнаруженных галактик, получившую обзначение ГН-з11"
       ),
     ]),
-    new Slide("title2", new Date(), new Date(), [
+    new Slide("title2", new Date("2019-01-01"), new Date("2020-01-01"), [
       new SubSlide(new Date("2015-01-01"), "pppppppppppppppppppppppppppp"),
       new SubSlide(
         new Date("2019-01-01"),
@@ -53,11 +53,8 @@ const App: React.FC = () => {
         "Телескоп 'Хаббл' обнаружи самую удаленную из всех обнаруженных галактик, получившую обзначение ГН-з11"
       ),
     ]),
-    new Slide("title3", new Date(), new Date(), [
-      new SubSlide(
-        new Date("2015-01-01"),
-        "dddddddddddddddddddddddddddddddddddddddddddddddd"
-      ),
+    new Slide("title3", new Date("2015-01-01"), new Date("2018-01-01"), [
+      new SubSlide(new Date("2015-01-01"), "ddddddddddddddddd"),
       new SubSlide(
         new Date("2016-01-01"),
         "Телескоп 'Хаббл' обнаружи самую удаленную из всех обнаруженных галактик, получившую обзначение ГН-з11"

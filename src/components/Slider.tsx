@@ -99,24 +99,28 @@ const GradientDiv = styled.div`
   width: 5px;
 `;
 const ButtonGroup = styled.div`
+  position: absolute;
+  z-index: 10;
+  top: 735px;
   display: flex;
-  padding-top: 185px;
   gap: 10px;
-  margin-left: 70px;
+  margin-left: 80px;
 `;
 const Button = styled.button`
   width: 50px;
   height: 50px;
+  flex-shrink: 0;
   border-radius: 50%;
   border: 1px solid;
   margin-left: 10px;
+  cursor: pointer;
 `;
 const SubSliderDiv = styled.div`
   display: flex;
   flex-direction: column;
-  padding-top: 55px;
   gap: 20px;
   opacity: 0px;
+  margin-left: 40px;
 `;
 const SliderText = styled.div`
   width: 320px;
@@ -127,7 +131,6 @@ const SliderText = styled.div`
   font-weight: 400;
   line-height: 30px;
   text-align: left;
-
   color: #42567a;
 `;
 const SubSliderDate = styled.div`
@@ -136,12 +139,28 @@ const SubSliderDate = styled.div`
   font-weight: bold;
   line-height: 30px;
   text-align: left;
-
   color: #3877ee;
+`;
+
+const SwiperWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  padding-top: 290px;
 `;
 
 export function SliderSlide(props: SliderSlideProps) {
   const { slide } = props;
+  const refSubSlide = useRef<SwiperRef>(null);
+
+  const handlePrev = useCallback(() => {
+    if (!refSubSlide.current) return;
+    refSubSlide.current.swiper.slidePrev();
+  }, []);
+
+  const handleNext = useCallback(() => {
+    if (!refSubSlide.current) return;
+    refSubSlide.current.swiper.slideNext();
+  }, []);
 
   const subSlides = slide.subSlides.map((subSlide) => {
     return (
@@ -155,14 +174,20 @@ export function SliderSlide(props: SliderSlideProps) {
   });
 
   return (
-    <Swiper
-      freeMode={true}
-      slidesPerView={3}
-      navigation={true}
-      modules={[FreeMode, Navigation]}
-    >
-      {subSlides}
-    </Swiper>
+    <>
+      <SwiperWrapper>
+        <Button onClick={handlePrev}>{"<"}</Button>
+        <Swiper
+          ref={refSubSlide}
+          freeMode={true}
+          slidesPerView={3}
+          modules={[FreeMode]}
+        >
+          {subSlides}
+        </Swiper>
+        <Button onClick={handleNext}>{">"}</Button>
+      </SwiperWrapper>
+    </>
   );
 }
 
@@ -170,7 +195,6 @@ export default function Slider(props: SliderProps) {
   const slideRef = useRef<SwiperRef>(null);
 
   const slideTitle = props.title;
-  const date = new Date(2002, 11, 11);
 
   const slides = props.slides.map((slide) => {
     return (
@@ -180,7 +204,6 @@ export default function Slider(props: SliderProps) {
           <EndDate>{slide.endDate.getFullYear()}</EndDate>
         </SliderDate>
         <SliderSlide slide={slide} />
-        <SliderText> {slide.title}</SliderText>
       </SwiperSlide>
     );
   });
@@ -212,10 +235,10 @@ export default function Slider(props: SliderProps) {
           <GradientDiv />
           <Title>{slideTitle}</Title>
         </TitleWrapper>
-        <ButtonGroup>{topLevelNavigation()}</ButtonGroup>{" "}
         <Swiper ref={slideRef}>
           <SubSliderDiv>{slides}</SubSliderDiv>
         </Swiper>
+        <ButtonGroup>{topLevelNavigation()}</ButtonGroup>{" "}
       </Wrapper>
     </>
   );
