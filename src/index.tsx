@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import Slider, { Slide, SubSlide } from "./components/slider";
+import Slider from "./components/Slider";
+import { Slide, SubSlide } from "./models/Slide";
 import "../src/css_reset.css";
 
 const App: React.FC = () => {
