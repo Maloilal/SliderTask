@@ -35,12 +35,12 @@ export default function Slider(props: SliderProps) {
 
   const slideTitle = props.title;
 
-  const slides = props.slides.map((slide) => {
+  const slides = props.slides.map((slide, index) => {
+    const isCurrentSlideActive = index == props.slides.indexOf(activeSlide);
+
     return (
       <SwiperSlide className="parent-swiper-no-swiping">
-        <div style={{ background: "#f4f5f9" }}>
-          <SliderSlide slide={slide} />
-        </div>
+        {isCurrentSlideActive && <SliderSlide slide={slide} />}
       </SwiperSlide>
     );
   });
