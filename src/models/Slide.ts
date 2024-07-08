@@ -1,4 +1,5 @@
 export class Slide {
+    id: number;
     title: string;
     startDate: Date;
     endDate: Date;
@@ -10,6 +11,7 @@ export class Slide {
       endDate: Date,
       subSlides: SubSlide[]
     ) {
+      this.id = Math.random()
       this.title = title;
       this.startDate = startDate;
       this.endDate = endDate;

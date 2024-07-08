@@ -8,6 +8,7 @@ import {
   SubSliderDiv,
   SliderText,
   SwiperWrapper,
+  LeftArrow,
 } from "./SliderStyle";
 
 interface SliderSlideProps {
@@ -42,7 +43,9 @@ export function SliderSlide(props: SliderSlideProps) {
   return (
     <>
       <SwiperWrapper>
-        <Button onClick={handlePrev}>{"<"}</Button>
+        <Button onClick={handlePrev}>
+          <LeftArrow />
+        </Button>
         <Swiper
           touchMoveStopPropagation
           ref={refSubSlide}

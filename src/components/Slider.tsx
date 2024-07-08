@@ -33,6 +33,12 @@ export default function Slider(props: SliderProps) {
   const slideRef = useRef<SwiperRef>(null);
   const [activeSlide, setActiveSlide] = useState<Slide>(props.slides[0]);
 
+  const activeIndexSlide = props.slides.findIndex(
+    (slide) => slide.id === activeSlide.id
+  );
+
+  const totalAmountSlides = props.slides.length;
+
   const slideTitle = props.title;
 
   const slides = props.slides.map((slide, index) => {
@@ -83,7 +89,11 @@ export default function Slider(props: SliderProps) {
         >
           <SubSliderDiv>{slides}</SubSliderDiv>
         </Swiper>
-        <SliderNavigation swiperRef={slideRef} />
+        <SliderNavigation
+          totalAmountSlides={totalAmountSlides}
+          activeSlide={activeIndexSlide}
+          swiperRef={slideRef}
+        />
         <VerticalVector />
         <MiddleVector />
         <MiddleCircle />

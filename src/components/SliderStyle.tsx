@@ -136,3 +136,11 @@ export const MiddleCircle = styled.div`
   border: 1px solid rgba(66, 86, 122, 0.1);
   border-radius: 50%;
 `;
+
+export const LeftArrow = styled.div`
+  width: 10px;
+  height: 10px;
+  border-top: 2px solid black;
+  border-left: 2px solid black;
+  transform: rotate(-45deg);
+`;
