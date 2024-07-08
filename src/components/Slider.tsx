@@ -1,8 +1,9 @@
-import React, { useState, useRef, useCallback } from "react";
+import React, { useState, useRef, useCallback, useEffect } from "react";
 import { Swiper, SwiperSlide, SwiperRef, SwiperClass } from "swiper/react";
 import { SliderNavigation } from "./SliderNavigation";
 import { SliderSlide } from "./SliderSlide";
 import { EffectFade, FreeMode } from "swiper/modules";
+import { AnimatedCounter } from "./AnimatedCounter";
 import {
   GlobalStyle,
   SliderDate,
@@ -60,8 +61,18 @@ export default function Slider(props: SliderProps) {
           <Title>{slideTitle}</Title>
         </TitleWrapper>
         <SliderDate>
-          <StartDate>{activeSlide.startDate.getFullYear()}</StartDate>
-          <EndDate>{activeSlide.endDate.getFullYear()}</EndDate>
+          <StartDate>
+            <AnimatedCounter
+              initialValue={activeSlide.startDate.getFullYear()}
+              end={activeSlide.startDate.getFullYear()}
+            />
+          </StartDate>
+          <EndDate>
+            <AnimatedCounter
+              initialValue={activeSlide.endDate.getFullYear()}
+              end={activeSlide.endDate.getFullYear()}
+            />
+          </EndDate>
         </SliderDate>
         <Swiper
           ref={slideRef}
