@@ -44,6 +44,7 @@ export function SliderSlide(props: SliderSlideProps) {
       <SwiperWrapper>
         <Button onClick={handlePrev}>{"<"}</Button>
         <Swiper
+          touchMoveStopPropagation
           ref={refSubSlide}
           freeMode={true}
           slidesPerView={3}

@@ -27,7 +27,7 @@ export const StartDate = styled.div`
   font-size: 200px;
   line-height: 160px;
   text-align: center;
-  color: #6383f7;
+  color: #3877ee;
 `;
 export const EndDate = styled.div`
   font-family: "PT Sans";
@@ -35,7 +35,7 @@ export const EndDate = styled.div`
   font-size: 200px;
   line-height: 160px;
   text-align: center;
-  color: #f582e9;
+  color: #ef5da8;
 `;
 
 export const TitleWrapper = styled.div`
@@ -62,7 +62,7 @@ export const ButtonGroup = styled.div`
   top: 735px;
   display: flex;
   gap: 10px;
-  margin-left: 80px;
+  margin-left: 70px;
 `;
 export const Button = styled.button`
   width: 50px;
@@ -72,6 +72,8 @@ export const Button = styled.button`
   border: 1px solid;
   margin-left: 10px;
   cursor: pointer;
+  background-color: #f4f5f9;
+  width: 50px;
 `;
 export const SubSliderDiv = styled.div`
   display: flex;
@@ -104,4 +106,33 @@ export const SwiperWrapper = styled.div`
   display: flex;
   align-items: center;
   padding-top: 290px;
+`;
+
+export const VerticalVector = styled.div`
+  position: absolute;
+  left: 1270px;
+  top: 0;
+  z-index: 101px;
+  width: 1px;
+  height: 1010px;
+  background-color: rgba(66, 86, 122, 0.1);
+`;
+export const MiddleVector = styled.div`
+  position: absolute;
+  top: 480px;
+  z-index: 100px;
+  width: 1440px;
+  height: 1px;
+  background-color: rgba(66, 86, 122, 0.1);
+`;
+
+export const MiddleCircle = styled.div`
+  position: absolute;
+  left: 1010px;
+  top: 215px;
+  z-index: 105px;
+  width: 530px;
+  height: 530px;
+  border: 1px solid rgba(66, 86, 122, 0.1);
+  border-radius: 50%;
 `;
