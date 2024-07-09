@@ -4,6 +4,7 @@ import { SliderNavigation } from "./SliderNavigation";
 import { SliderSlide } from "./SliderSlide";
 import { EffectFade, FreeMode } from "swiper/modules";
 import { AnimatedCounter } from "./AnimatedCounter";
+import { SelectWheelItem } from "./SelectWheel";
 import {
   GlobalStyle,
   SliderDate,
@@ -23,6 +24,8 @@ import "swiper/css/navigation";
 import "swiper/css/effect-fade";
 import { Slide, SubSlide } from "../models/Slide";
 import styled from "styled-components";
+
+import { SelectWheel } from "./SelectWheel";
 
 interface SliderProps {
   title: string;
@@ -57,6 +60,10 @@ export default function Slider(props: SliderProps) {
 
     setActiveSlide(newActiveSlide);
   };
+
+  const selectWheelItems = props.slides.map(
+    (slide) => new SelectWheelItem(slide.title)
+  );
 
   return (
     <>
@@ -98,6 +105,7 @@ export default function Slider(props: SliderProps) {
         <MiddleVector />
         <MiddleCircle />
       </Wrapper>
+      <SelectWheel items={selectWheelItems}></SelectWheel>
     </>
   );
 }
