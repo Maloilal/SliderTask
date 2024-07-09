@@ -6,7 +6,7 @@ import "../src/css_reset.css";
 
 const App: React.FC = () => {
   const slides: Slide[] = [
-    new Slide("title", new Date("2015-01-16"), new Date("2022-01-16"), [
+    new Slide("Кино", new Date("2015-01-16"), new Date("2022-01-16"), [
       new SubSlide(
         new Date("2015-01-01"),
         "13 сентября - частное солнечное затмение, видимое в южной африке и части антарктиды"
@@ -24,7 +24,7 @@ const App: React.FC = () => {
         "Телескоп 'Хаббл' обнаружи самую удаленную из всех обнаруженных галактик, получившую обзначение ГН-з11"
       ),
     ]),
-    new Slide("title1", new Date("2017-01-16"), new Date("2021-01-16"), [
+    new Slide("Музыка", new Date("2017-01-16"), new Date("2021-01-16"), [
       new SubSlide(new Date("2015-01-01"), "ssssssssssssss"),
       new SubSlide(
         new Date("2016-01-01"),
@@ -39,7 +39,7 @@ const App: React.FC = () => {
         "Телескоп 'Хаббл' обнаружи самую удаленную из всех обнаруженных галактик, получившую обзначение ГН-з11"
       ),
     ]),
-    new Slide("title2", new Date("2019-01-01"), new Date("2020-01-01"), [
+    new Slide("Книги", new Date("2019-01-01"), new Date("2020-01-01"), [
       new SubSlide(new Date("2015-01-01"), "pppppppppppppppppppppppppppp"),
       new SubSlide(
         new Date("2019-01-01"),
@@ -54,7 +54,7 @@ const App: React.FC = () => {
         "Телескоп 'Хаббл' обнаружи самую удаленную из всех обнаруженных галактик, получившую обзначение ГН-з11"
       ),
     ]),
-    new Slide("title3", new Date("2015-01-01"), new Date("2018-01-01"), [
+    new Slide("Космос", new Date("2015-01-01"), new Date("2018-01-01"), [
       new SubSlide(new Date("2015-01-01"), "ddddddddddddddddd"),
       new SubSlide(
         new Date("2016-01-01"),
@@ -69,7 +69,7 @@ const App: React.FC = () => {
         "Телескоп 'Хаббл' обнаружи самую удаленную из всех обнаруженных галактик, получившую обзначение ГН-з11"
       ),
     ]),
-    new Slide("title3", new Date("2015-01-01"), new Date("2018-01-01"), [
+    new Slide("Открытия", new Date("2015-01-01"), new Date("2018-01-01"), [
       new SubSlide(new Date("2015-01-01"), "ddddddddddddddddd"),
       new SubSlide(
         new Date("2016-01-01"),
@@ -84,7 +84,7 @@ const App: React.FC = () => {
         "Телескоп 'Хаббл' обнаружи самую удаленную из всех обнаруженных галактик, получившую обзначение ГН-з11"
       ),
     ]),
-    new Slide("title3", new Date("2015-01-01"), new Date("2018-01-01"), [
+    new Slide("Политика", new Date("2015-01-01"), new Date("2018-01-01"), [
       new SubSlide(new Date("2015-01-01"), "ddddddddddddddddd"),
       new SubSlide(
         new Date("2016-01-01"),
@@ -99,7 +99,7 @@ const App: React.FC = () => {
         "Телескоп 'Хаббл' обнаружи самую удаленную из всех обнаруженных галактик, получившую обзначение ГН-з11"
       ),
     ]),
-    new Slide("title3", new Date("2015-01-01"), new Date("2018-01-01"), [
+    new Slide("Отдых", new Date("2015-01-01"), new Date("2018-01-01"), [
       new SubSlide(new Date("2015-01-01"), "ddddddddddddddddd"),
       new SubSlide(
         new Date("2016-01-01"),
@@ -114,7 +114,7 @@ const App: React.FC = () => {
         "Телескоп 'Хаббл' обнаружи самую удаленную из всех обнаруженных галактик, получившую обзначение ГН-з11"
       ),
     ]),
-    new Slide("title3", new Date("2015-01-01"), new Date("2018-01-01"), [
+    new Slide("Хобби", new Date("2015-01-01"), new Date("2018-01-01"), [
       new SubSlide(new Date("2015-01-01"), "ddddddddddddddddd"),
       new SubSlide(
         new Date("2016-01-01"),
@@ -129,7 +129,7 @@ const App: React.FC = () => {
         "Телескоп 'Хаббл' обнаружи самую удаленную из всех обнаруженных галактик, получившую обзначение ГН-з11"
       ),
     ]),
-    new Slide("title3", new Date("2015-01-01"), new Date("2018-01-01"), [
+    new Slide("Путешествия", new Date("2015-01-01"), new Date("2018-01-01"), [
       new SubSlide(new Date("2015-01-01"), "ddddddddddddddddd"),
       new SubSlide(
         new Date("2016-01-01"),
@@ -144,7 +144,7 @@ const App: React.FC = () => {
         "Телескоп 'Хаббл' обнаружи самую удаленную из всех обнаруженных галактик, получившую обзначение ГН-з11"
       ),
     ]),
-    new Slide("title3", new Date("2015-01-01"), new Date("2018-01-01"), [
+    new Slide("Растения", new Date("2015-01-01"), new Date("2018-01-01"), [
       new SubSlide(new Date("2015-01-01"), "ddddddddddddddddd"),
       new SubSlide(
         new Date("2016-01-01"),
