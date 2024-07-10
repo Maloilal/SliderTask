@@ -97,7 +97,11 @@ const App: React.FC = () => {
       ),
     ]),
   ];
-  return <Slider title="Исторические даты" slides={slides} />;
+  return (
+    <>
+      <Slider title="Исторические даты" slides={slides} />;
+    </>
+  );
 };
 
 const root = ReactDOM.createRoot(document.getElementById("root")!);

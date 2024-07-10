@@ -7,6 +7,7 @@ export const GlobalStyle = createGlobalStyle`
   }`;
 
 export const Wrapper = styled.section`
+  position: relative;
   width: 1440px;
   border: 1px solid rgba(66, 86, 122, 0.1);
   margin: auto;
@@ -110,7 +111,7 @@ export const SwiperWrapper = styled.div`
 
 export const VerticalVector = styled.div`
   position: absolute;
-  left: 1270px;
+  left: 720px;
   top: 0;
   z-index: 101px;
   width: 1px;
@@ -128,7 +129,7 @@ export const MiddleVector = styled.div`
 
 export const MiddleCircle = styled.div`
   position: absolute;
-  left: 1010px;
+  left: 455px;
   top: 215px;
   z-index: 105;
   width: 530px;
