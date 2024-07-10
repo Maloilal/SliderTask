@@ -114,7 +114,7 @@ export const VerticalVector = styled.div`
   top: 0;
   z-index: 101px;
   width: 1px;
-  height: 1010px;
+  height: 100vh;
   background-color: rgba(66, 86, 122, 0.1);
 `;
 export const MiddleVector = styled.div`
@@ -130,11 +130,9 @@ export const MiddleCircle = styled.div`
   position: absolute;
   left: 1010px;
   top: 215px;
-  z-index: 105px;
+  z-index: 105;
   width: 530px;
   height: 530px;
-  border: 1px solid rgba(66, 86, 122, 0.1);
-  border-radius: 50%;
 `;
 
 export const LeftArrow = styled.div`

@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
+import { MiddleCircle } from "./SliderStyle";
 
 const SelectWheelCircle = styled.div`
   width: 530px;
   height: 530px;
-  border: 1px solid red;
+  border: 1px solid rgba(66, 86, 122, 0.1);
   border-radius: 50%;
   position: relative;
 `;
@@ -21,8 +22,29 @@ const SelectWheelDot = styled.div`
   position: absolute;
   width: 10px;
   height: 10px;
-  background: black;
+  background: #42567a;
   border-radius: 50%;
+  cursor: pointer;
+  transform: scale(1);
+  &:hover {
+    transform: scale(3);
+    background-color: #f4f5f9;
+    border: 1px solid #42567a;
+    transition-duration: 0.8s;
+    transition-property: transform;
+  }
+`;
+
+const SelectWheelLabel = styled.div`
+  position: absolute;
+  width: 100px;
+  height: 40px;
+  font-family: "PT Sans";
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 30px;
+  text-align: left;
+  color: #42567a;
 `;
 
 export class SelectWheelItem {
@@ -103,14 +125,22 @@ export const SelectWheel = (props: SelectWheelProps) => {
 
   return (
     <SelectWheelCircle>
+      <SelectWheelCenter>
+        <SelectWheelLabel
+          style={{
+            top: itemsWithCoordinates[0].y - 40,
+            left: itemsWithCoordinates[0].x + 20,
+          }}
+        >
+          {selectedItem.title}
+        </SelectWheelLabel>
+      </SelectWheelCenter>
       <SelectWheelCenter style={{ transform: `rotate(${rotateDeg}deg)` }}>
         {itemsWithCoordinates.map((item, index) => (
           <SelectWheelDot
             style={{ top: item.y - 5, left: item.x - 5 }}
             onClick={() => handleDotClick(index)}
-          >
-            {item.title} {item.anglePI}
-          </SelectWheelDot>
+          ></SelectWheelDot>
         ))}
       </SelectWheelCenter>
     </SelectWheelCircle>

@@ -107,13 +107,14 @@ export default function Slider(props: SliderProps) {
         />
         <VerticalVector />
         <MiddleVector />
-        <MiddleCircle />
+        <MiddleCircle>
+          <SelectWheel
+            items={selectWheelItems}
+            activeIndex={slideRef.current?.swiper.activeIndex || 0}
+            onIndexSelected={handleIndexSelected}
+          ></SelectWheel>
+        </MiddleCircle>
       </Wrapper>
-      <SelectWheel
-        items={selectWheelItems}
-        activeIndex={slideRef.current?.swiper.activeIndex || 0}
-        onIndexSelected={handleIndexSelected}
-      ></SelectWheel>
     </>
   );
 }
