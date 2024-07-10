@@ -13,6 +13,8 @@ const SelectWheelCenter = styled.div`
   position: absolute;
   left: 265px;
   top: 265px;
+  transition-duration: 0.8s;
+  transition-property: transform;
 `;
 
 const SelectWheelDot = styled.div`

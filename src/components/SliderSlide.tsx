@@ -3,12 +3,13 @@ import React, { useRef, useCallback } from "react";
 import { SwiperRef, Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode } from "swiper/modules";
 import {
-  Button,
+  SubButton,
   SubSliderDate,
   SubSliderDiv,
   SliderText,
   SwiperWrapper,
   LeftArrow,
+  RightArrow,
 } from "./SliderStyle";
 
 interface SliderSlideProps {
@@ -43,11 +44,13 @@ export function SliderSlide(props: SliderSlideProps) {
   return (
     <>
       <SwiperWrapper>
-        <Button onClick={handlePrev}>
-          <LeftArrow />
-        </Button>
+        {refSubSlide.current?.swiper.activeIndex !== 0 && (
+          <SubButton onClick={handlePrev}>
+            <LeftArrow />
+            {refSubSlide.current?.swiper.activeIndex}
+          </SubButton>
+        )}
         <Swiper
-          touchMoveStopPropagation
           ref={refSubSlide}
           freeMode={true}
           slidesPerView={3}
@@ -55,7 +58,9 @@ export function SliderSlide(props: SliderSlideProps) {
         >
           {subSlides}
         </Swiper>
-        <Button onClick={handleNext}>{">"}</Button>
+        <SubButton onClick={handleNext}>
+          <RightArrow />
+        </SubButton>
       </SwiperWrapper>
     </>
   );

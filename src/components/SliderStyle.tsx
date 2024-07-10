@@ -143,4 +143,32 @@ export const LeftArrow = styled.div`
   border-top: 2px solid black;
   border-left: 2px solid black;
   transform: rotate(-45deg);
+  margin: auto;
+`;
+export const RightArrow = styled.div`
+  width: 10px;
+  height: 10px;
+  border-top: 2px solid black;
+  border-left: 2px solid black;
+  transform: rotate(135deg);
+  margin: auto;
+`;
+
+export const SlideCounter = styled.div`
+  position: absolute;
+  top: -35px;
+  left: 10px;
+`;
+
+export const SubButton = styled.button`
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  border: 0px solid;
+  margin-left: 20px;
+  cursor: pointer;
+  margin-right: 35px;
+  background-color: #ffffff;
+  margin-bottom: 35px;
 `;

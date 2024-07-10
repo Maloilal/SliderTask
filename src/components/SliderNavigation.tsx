@@ -1,6 +1,12 @@
 import React, { useCallback } from "react";
 import { SwiperRef } from "swiper/react";
-import { Button, ButtonGroup } from "./SliderStyle";
+import {
+  Button,
+  ButtonGroup,
+  LeftArrow,
+  RightArrow,
+  SlideCounter,
+} from "./SliderStyle";
 
 interface SliderNavigartionProps {
   swiperRef: React.RefObject<SwiperRef>;
@@ -22,11 +28,16 @@ export const SliderNavigation = (props: SliderNavigartionProps) => {
 
   return (
     <ButtonGroup>
-      <div>
-        {activeSlide + 1}/{totalAmountSlides}
-      </div>
-      <Button onClick={handlePrev}>{"<"}</Button>
-      <Button onClick={handleNext}>{">"}</Button>
+      <SlideCounter>
+        {activeSlide < 10 ? "0" + `${activeSlide + 1}` : activeSlide + 1}/
+        {totalAmountSlides < 10 ? "0" + totalAmountSlides : totalAmountSlides}
+      </SlideCounter>
+      <Button onClick={handlePrev}>
+        <LeftArrow />
+      </Button>
+      <Button onClick={handleNext}>
+        <RightArrow />
+      </Button>
     </ButtonGroup>
   );
 };
