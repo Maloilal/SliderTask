@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 
 const SelectWheelCircle = styled.div`
@@ -52,9 +52,12 @@ class SelectWheelItemWithCoordinates extends SelectWheelItem {
 
 interface SelectWheelProps {
   items: SelectWheelItem[];
+  activeIndex: number;
+  onIndexSelected: (index: number) => void;
 }
 
 export const SelectWheel = (props: SelectWheelProps) => {
+  const { activeIndex, onIndexSelected } = props;
   const size = 530;
   const [rotateDeg, setRotateDeg] = useState(0);
 
@@ -84,20 +87,27 @@ export const SelectWheel = (props: SelectWheelProps) => {
   const [selectedItem, setSelectedItem] =
     useState<SelectWheelItemWithCoordinates>(itemsWithCoordinates[0]);
 
-  const handleDotClick = (item: SelectWheelItemWithCoordinates) => {
-    const anglePIDiff = item.anglePI - singleItemAngle;
+  const handleDotClick = (newActiveIndex: number) => {
+    onIndexSelected(newActiveIndex);
+  };
+
+  useEffect(() => {
+    const anglePIDiff = selectedItem.anglePI - singleItemAngle;
     const rotateDeg = (180 * anglePIDiff) / Math.PI;
     setRotateDeg(rotateDeg);
-    setSelectedItem(item);
-  };
+  }, [selectedItem]);
+
+  useEffect(() => {
+    setSelectedItem(itemsWithCoordinates[activeIndex]);
+  }, [activeIndex]);
 
   return (
     <SelectWheelCircle>
       <SelectWheelCenter style={{ transform: `rotate(${rotateDeg}deg)` }}>
-        {itemsWithCoordinates.map((item) => (
+        {itemsWithCoordinates.map((item, index) => (
           <SelectWheelDot
             style={{ top: item.y - 5, left: item.x - 5 }}
-            onClick={() => handleDotClick(item)}
+            onClick={() => handleDotClick(index)}
           >
             {item.title} {item.anglePI}
           </SelectWheelDot>

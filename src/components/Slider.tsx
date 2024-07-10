@@ -61,6 +61,10 @@ export default function Slider(props: SliderProps) {
     setActiveSlide(newActiveSlide);
   };
 
+  const handleIndexSelected = (index: number) => {
+    slideRef.current?.swiper.slideTo(index);
+  };
+
   const selectWheelItems = props.slides.map(
     (slide) => new SelectWheelItem(slide.title)
   );
@@ -105,7 +109,11 @@ export default function Slider(props: SliderProps) {
         <MiddleVector />
         <MiddleCircle />
       </Wrapper>
-      <SelectWheel items={selectWheelItems}></SelectWheel>
+      <SelectWheel
+        items={selectWheelItems}
+        activeIndex={slideRef.current?.swiper.activeIndex || 0}
+        onIndexSelected={handleIndexSelected}
+      ></SelectWheel>
     </>
   );
 }
