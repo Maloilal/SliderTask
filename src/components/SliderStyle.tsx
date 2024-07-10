@@ -170,3 +170,48 @@ export const SubButton = styled.button`
   background-color: #ffffff;
   margin-bottom: 35px;
 `;
+
+export const SelectWheelCircle = styled.div`
+  width: 530px;
+  height: 530px;
+  border: 1px solid rgba(66, 86, 122, 0.1);
+  border-radius: 50%;
+  position: relative;
+`;
+
+export const SelectWheelCenter = styled.div`
+  position: absolute;
+  left: 265px;
+  top: 265px;
+  transition-duration: 0.8s;
+  transition-property: transform;
+`;
+
+export const SelectWheelDot = styled.div`
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: #42567a;
+  border-radius: 50%;
+  cursor: pointer;
+  transform: scale(1);
+  &:hover {
+    transform: scale(3);
+    background-color: #f4f5f9;
+    border: 1px solid #42567a;
+    transition-duration: 0.8s;
+    transition-property: transform;
+  }
+`;
+
+export const SelectWheelLabel = styled.div`
+  position: absolute;
+  width: 100px;
+  height: 40px;
+  font-family: "PT Sans";
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 30px;
+  text-align: left;
+  color: #42567a;
+`;

@@ -4,7 +4,7 @@ import { SliderNavigation } from "./SliderNavigation";
 import { SliderSlide } from "./SliderSlide";
 import { EffectFade, FreeMode } from "swiper/modules";
 import { AnimatedCounter } from "./AnimatedCounter";
-import { SelectWheelItem } from "./SelectWheel";
+import { SelectWheelItem } from "../models/SelectWheelItem";
 import {
   GlobalStyle,
   SliderDate,
